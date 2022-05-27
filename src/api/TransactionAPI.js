@@ -142,6 +142,7 @@ export async function setTransactionCategory(t, e) {
   return new Promise((a) => {
     setTimeout(
       () => (
+        // eslint-disable-next-line no-sequences
         n.updateTransaction(t, "categoryId", e),
         n.save(),
         a(n.transactions()[t])
@@ -155,6 +156,7 @@ export async function setTransactionMemo(t, e) {
   return new Promise((a) => {
     setTimeout(
       () => (
+        // eslint-disable-next-line no-sequences
         n.updateTransaction(t, "memo", e), n.save(), a(n.transactions()[t])
       ),
       200

@@ -1,28 +1,6 @@
 import React from "react";
 import { MemoLogo } from "./MemoLogo";
-
-function formatCurrency(amount) {
-  let i = parseFloat(amount);
-  if (isNaN(i)) {
-    i = 0.0;
-  }
-  let minus = "";
-  if (i < 0) {
-    minus = "-";
-  }
-  i = Math.abs(i);
-  i = parseInt((i + 0.005) * 100);
-  i = i / 100;
-  let s = new String(i);
-  if (s.indexOf(".") < 0) {
-    s += ".00";
-  }
-  if (s.indexOf(".") === s.length - 2) {
-    s += "0";
-  }
-  s = minus + s;
-  return s;
-}
+import { formatCurrency } from "../formatCurrency";
 
 export const TransactionHeader = ({
   merchant,
@@ -54,7 +32,7 @@ export const TransactionHeader = ({
           )}`}</span>
           <div className="transaction-details-memo">
             <div className="transaction-memo">
-              <MemoLogo isShow={!!memo}/>
+              <MemoLogo isShow={!!memo} />
             </div>
           </div>
         </div>
