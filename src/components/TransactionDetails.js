@@ -48,15 +48,17 @@ export const TransactionDetails = ({
         </div>
         <div className="transaction-detail-row">
           <div className="transaction-row-before">Category</div>
-          <select
-            className="transaction-row-category"
-            value={selectedCategory}
-            onChange={(e) => handleSelectCategory(e)}
-          >
-            {categories.map((ct) => (
-              <option key={ct.name} id={ct.id}>{ct.name}</option>
-            ))}
-          </select>
+          <div className="transaction-category-section">
+            <select
+              className="transaction-category-select"
+              value={selectedCategory}
+              onChange={(e) => handleSelectCategory(e)}
+            >
+              {categories.map((ct) => (
+                <option key={ct.name} id={ct.id}>{ct.name}</option>
+              ))}
+            </select>
+            </div>
         </div>
       </div>
     </div>
