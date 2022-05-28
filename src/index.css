@@ -65,6 +65,7 @@ code {
   visibility: hidden;
   opacity: 0;
   max-height: 0px;
+  transition: max-height 0.4s, opacity 0.8s, visibility 0.8s ease;
 }
 
 .transaction-body.show {
@@ -90,7 +91,7 @@ code {
 .transaction-details-after {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
   position: relative;
 }
 
@@ -98,21 +99,22 @@ code {
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 0.4rem;
 }
 
 .memo-logo {
-  visibility: hidden;
   background-color: orangered;
   color: white;
   padding: 0.4rem;
   position: absolute;
+  opacity: 0;
   top: -7px;
   right: -7px;
+  transition: opacity 0.4s ease;
 }
 
 .memo-logo.show {
-  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.4s ease;
 }
 
 .transaction-memo-text-area {
@@ -194,7 +196,7 @@ code {
   z-index: 1000;
 }
 .transaction-category-section select {
-  width: 8rem;
+  width: 10rem;
   border: 0;
   position: relative;
   z-index: 99;
@@ -202,5 +204,5 @@ code {
   font-weight: 800;
   color: orangered;
   font-size: 1.1rem;
-  text-align: center;
+  text-align: right;
 }
